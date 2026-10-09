@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BeatsRPG</title>
+<meta name="description" content="A rhythm-typing RPG prototype. The enemy sets the rhythm; your gear decides how you play it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400;600;700&family=Silkscreen:wght@400;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game" width="1920" height="1080" aria-label="Battle view"></canvas>
+
+  <section id="screen-title" class="screen">
+    <div class="title-wrap">
+      <p class="eyebrow">Rhythm-typing RPG · playable prototype</p>
+      <h1 class="logo">Beats<span>RPG</span></h1>
+      <p class="tagline">The foe sets the rhythm. Your gear decides how you play it.</p>
+      <ul class="pillars">
+        <li><i class="dot dot-rune"></i><span><b>Strike</b> when cyan notes reach the line.</span></li>
+        <li><i class="dot dot-ember"></i><span><b>Parry</b> ember notes or take the blow.</span></li>
+        <li><i class="dot dot-hex"></i><span><b>Swap gear</b> to change what your hands do.</span></li>
+      </ul>
+      <button id="btn-start" class="btn btn-primary" type="button">Start <kbd>Enter</kbd></button>
+      <p class="fine" id="kbd-note">Best with a physical keyboard and headphones.</p>
+    </div>
+  </section>
+
+  <section id="screen-loadout" class="screen" hidden>
+    <header class="lo-head">
+      <h2>Loadout</h2>
+      <div class="settings">
+        <div class="set" title="Raise it if your hits read LATE, lower it if they read EARLY">Input offset
+          <button type="button" class="mini" id="off-minus" aria-label="Decrease offset">−</button>
+          <output id="set-offset">0 ms</output>
+          <button type="button" class="mini" id="off-plus" aria-label="Increase offset">+</button>
+        </div>
+        <label class="set check" for="set-cues"><input type="checkbox" id="set-cues"> Note cues</label>
+        <label class="set check" for="set-auto"><input type="checkbox" id="set-auto"> Autoplay demo</label>
+      </div>
+    </header>
+    <div class="lo-grid">
+      <div class="col">
+        <h3>Weapon <span>how you play the rhythm</span></h3>
+        <div id="weapon-list" class="list"></div>
+      </div>
+      <div class="col">
+        <h3>Trinket <span>a twist</span></h3>
+        <div id="trinket-list" class="list"></div>
+      </div>
+      <div class="col">
+        <h3>Foe <span>sets the rhythm</span></h3>
+        <div id="enemy-list" class="list"></div>
+      </div>
+    </div>
+    <footer class="lo-foot">
+      <p id="lo-summary"></p>
+      <button id="btn-fight" class="btn btn-primary" type="button">Fight <kbd>Enter</kbd></button>
+    </footer>
+  </section>
+
+  <section id="screen-pause" class="screen overlay" hidden>
+    <div class="card-center">
+      <h2>Paused</h2>
+      <div class="actions">
+        <button id="btn-resume" class="btn btn-primary" type="button">Resume <kbd>Esc</kbd></button>
+        <button id="btn-quit" class="btn" type="button">Quit to loadout <kbd>Q</kbd></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="screen-results" class="screen overlay" hidden>
+    <div class="card-center results">
+      <p class="eyebrow" id="res-foe"></p>
+      <div class="res-top">
+        <h2 id="res-title">Victory</h2>
+        <div class="grade" id="res-grade">A</div>
+      </div>
+      <dl class="stats" id="res-stats"></dl>
+      <div class="actions">
+        <button id="btn-retry" class="btn btn-primary" type="button">Retry <kbd>R</kbd></button>
+        <button id="btn-next" class="btn" type="button">Next foe <kbd>N</kbd></button>
+        <button id="btn-loadout" class="btn" type="button">Loadout <kbd>L</kbd></button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/sprites.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
