@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeatsRPG Promo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400;600;700&family=Silkscreen:wght@400;700&display=swap">
+<style>
+  html, body { margin: 0; height: 100%; background: #0b0816; overflow: hidden; }
+  #ad { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; transform-origin: center; display: block; }
+  #play {
+    position: absolute; inset: 0; display: grid; place-items: center; border: 0; cursor: pointer;
+    background: rgba(11, 8, 22, 0.6); color: #f2e6c9; font: 600 28px "Pixelify Sans", monospace;
+  }
+  #play[hidden] { display: none; }
+  body.render #play { display: none; }
+</style>
+</head>
+<body>
+<canvas id="ad" width="1920" height="1080" aria-label="BeatsRPG promotional video"></canvas>
+<button id="play" type="button">▶ Play ad (sound on)</button>
+
+<script src="../js/data.js"></script>
+<script src="../js/sprites.js"></script>
+<script src="../js/audio.js"></script>
+<script src="../js/chart.js"></script>
+<script src="../js/battle.js"></script>
+<script src="ad.js"></script>
+</body>
+</html>

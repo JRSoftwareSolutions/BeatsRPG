@@ -74,6 +74,7 @@ js/audio.js     Web Audio synth: drums, bass, note cues, SFX, latency-aware cloc
 js/sprites.js   pixel-art sprites (as text) and painted backdrops
 js/ui.js        loadout, pause and results screens
 js/main.js      boot, screen flow, input routing, render loop
+promo/          30-second promo video and the page/script that render it
 ```
 
 ### Adding an enemy
